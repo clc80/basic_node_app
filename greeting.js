@@ -8,5 +8,5 @@ exports.greetingSpanish = function() {
     console.log("Hola");
   }
 exports.greetingIcelandic = function() {
-  consolg.log("Halló");
+  console.log("Halló");
 }
