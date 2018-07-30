@@ -1,0 +1,20 @@
+1. What is a Node Module?
+
+Modules are somewhat the same as JavaScript libraries.
+All it is, is a set of functions you want to include in your application.
+
+2. What is the main difference between exports and module.exports?
+
+Initially, exports and module.exports point at the same empty object.You can add properties to this object using either module.exports or exports since they both point to the same object, it doesn’t matter which you use.
+
+This is when the difference between exports and module.exports is important.
+
+module.exports wins
+
+What this means is that whatever object module.exports is assigned to is the object that is exported from your module.
+
+If you want to export a function from your module and you assign it to exports and not module.exports then your module will export an empty object, not the function that you probably intended it to export!
+
+3. Why is using exports recommended?
+Because exports is a reference to module.exports and cannot reassign the object module.exports which makes it easy to use and less prone to errors.
+The only time we should use module.exports is if we want to return a function or if you want to export something other than an empty object and you want to use exports elsewhere in your module, you’ll need to reassign them both:
